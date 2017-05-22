@@ -9,6 +9,8 @@ export default function Stations ({stations}) {
       { name: 'Death Metal' },
       { name: 'Classical' }
     ];
+    
+    // console.log(stations)
         
     return (
         <div>
@@ -18,7 +20,7 @@ export default function Stations ({stations}) {
           stations.map(station => {
             return (
               <div className="list-group-item" key={station.name}>
-                <Link to={'#'}>{station.name}</Link>
+                <Link to={`/stations/${station.name}`}>{station.name}</Link>
               </div>
             );
           })

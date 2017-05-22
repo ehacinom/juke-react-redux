@@ -20,3 +20,16 @@ export const skip = (interval, {currentSongList, currentSong}) => {
   const next = currentSongList[idx];
   return [next, currentSongList];
 };
+
+export const convertSongsToStations = function (songs) {
+    // reduce to obj
+    let obj = songs.reduce((stations, song) => {
+        stations[song.genre] 
+            ? stations[song.genre].push(song)
+            : stations[song.genre] = [song];
+        return stations
+    }, {});
+    
+    // return an array of genres
+    return Object.keys(obj).map(name => ({name: name, songs: obj[name]}));
+};
