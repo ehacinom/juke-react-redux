@@ -13,6 +13,7 @@ export default function (state = initialLyricsState, action) {
   switch (action.type) {
 
     case SET_LYRICS:
+      console.log('lyric reducer', action.text)
       newState.text = action.text;
       break;
 

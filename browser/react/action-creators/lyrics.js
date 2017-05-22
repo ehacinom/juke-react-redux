@@ -7,6 +7,7 @@ export const setLyrics = text => ({
 });
 
 export const searchLyrics = (artist, song) => {
+  console.log('hey here in actioncreators lyrics')
   return dispatch => {
     axios.get(`/api/lyrics/${artist}/${song}`)
       .then(res => {
