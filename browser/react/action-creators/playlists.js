@@ -39,7 +39,8 @@ export const addNewPlaylist = playlistName => {
 
   return (dispatch, getState) => {
 
-    return axios.post('/api/playlists', {name: playlistName})
+    return axios
+      .post('/api/playlists', {name: playlistName})
       .then(res => res.data)
       .then(playlist => {
         const newListOfPlaylists = getState().playlists.list.concat([playlist]);
