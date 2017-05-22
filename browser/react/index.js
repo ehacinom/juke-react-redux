@@ -11,6 +11,7 @@ import PlaylistContainer from './containers/PlaylistContainer';
 import LyricsContainer from './containers/LyricsContainer';
 import StationsContainer from './containers/StationsContainer';
 import StationContainer from './containers/StationContainer';
+import SongsContainer from './containers/SongsContainer';
 
 
 import App from './components/App';

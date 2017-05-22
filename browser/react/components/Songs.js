@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Songs (props) {
 
+  console.log('props in songs', props)
   const songs = props.songs;
   const currentSong = props.currentSong;
   const isPlaying = props.isPlaying;
@@ -22,13 +23,24 @@ export default function Songs (props) {
           songs && songs.map(song => (
             <tr key={song.id}>
               <td>
-                <button className="btn btn-default btn-xs" onClick={() => toggle(song, songs)}>
-                  <span className={song.id === currentSong.id && isPlaying ? "glyphicon glyphicon-pause" : "glyphicon glyphicon-play"}></span>
+                <button 
+                  className="btn btn-default btn-xs" 
+                  onClick={() => toggle(song, songs)}
+                >
+                  <span className={
+                      song.id === currentSong.id && isPlaying 
+                      ? "glyphicon glyphicon-pause" 
+                      : "glyphicon glyphicon-play"
+                  }></span>
                 </button>
               </td>
               <td>{ song.name }</td>
               <td>
-                <span>{ song.artists ? song.artists.map(artist => artist.name).join(', ') : null }</span>
+                <span>{ 
+                    song.artists 
+                    ? song.artists.map(artist => artist.name).join(', ') 
+                    : null 
+                }</span>
               </td>
               <td>{ song.genre }</td>
             </tr>
